@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-cuoi-34.jpg" type="image/x-icon">
+    <style>
+.hotline-phone-ring-circle{width:85px;height:85px;top:10px;left:10px;position:absolute;background-color:transparent;border-radius:100%;border:2px solid #e60808;-webkit-animation:phonering-alo-circle-anim 1.2s infinite ease-in-out;animation:phonering-alo-circle-anim 1.2s infinite ease-in-out;transition:all .5s;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;opacity:.5}
+.hotline-phone-ring-circle-fill{width:55px;height:55px;top:22px;left:26px;position:absolute;background-color:rgba(230,8,8,.7);border-radius:100%;border:2px solid transparent;-webkit-animation:phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;animation:phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;transition:all .5s;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%}
+.hotline-phone-ring-img-circle{background-color:#e4212a;width:33px;height:33px;top:33px;left:37px;position:absolute;background-size:20px;border-radius:100%;border:2px solid transparent;-webkit-animation:phonering-alo-circle-img-anim 1s infinite ease-in-out;animation:phonering-alo-circle-img-anim 1s infinite ease-in-out;-webkit-transform-origin:50% 50%;-ms-transform-origin:50% 50%;transform-origin:50% 50%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;align-items:center;justify-content:center}
+.hotline-phone-ring-img-circle .pps-btn-img{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
+.hotline-phone-ring-img-circle .pps-btn-img img{width:20px;height:20px}
+
+.hotline-bar{
+  position:absolute;
+  background:#e88a25;
+  background:-webkit-linear-gradient(left,#e88a25,#d40000);
+  background:-o-linear-gradient(right,#e88a25,#d40000);
+  background:-moz-linear-gradient(right,#e88a25,#d40000);
+  background:linear-gradient(to right,#e88a25,#e4212a);
+  height:40px;
+  width:200px;
+  line-height:40px;
+  border-radius:3px;
+  padding:0 10px;
+  background-size:100%;
+  cursor:pointer;
+  transition:all .8s;
+  -webkit-transition:all .8s;
+  z-index:9;
+  box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.1);
+  border-radius:50px !important;
+  border:2px solid #fff;
+  left:33px;
+  bottom:37px}
+.hotline-bar>a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:900;
+  text-indent:50px;
+  display:block;
+  letter-spacing:1px;
+  line-height:38px;
+  font-family:Arial}
+.hotline-bar>a:hover,.hotline-bar>a:active{
+  color:#fff
+}
+@-webkit-keyframes phonering-alo-circle-anim {0%{-webkit-transform:rotate(0) scale(.5) skew(1deg);-webkit-opacity:.1}30%{-webkit-transform:rotate(0) scale(.7) skew(1deg);-webkit-opacity:.5}100%{-webkit-transform:rotate(0) scale(1) skew(1deg);-webkit-opacity:.1}}@-webkit-keyframes phonering-alo-circle-fill-anim{0%{-webkit-transform:rotate(0) scale(.7) skew(1deg);opacity:.6}50%{-webkit-transform:rotate(0) scale(1) skew(1deg);opacity:.6}100%{-webkit-transform:rotate(0) scale(.7) skew(1deg);opacity:.6}}@-webkit-keyframes phonering-alo-circle-img-anim{0%{-webkit-transform:rotate(0) scale(1) skew(1deg)}10%{-webkit-transform:rotate(-25deg) scale(1) skew(1deg)}20%{-webkit-transform:rotate(25deg) scale(1) skew(1deg)}30%{-webkit-transform:rotate(-25deg) scale(1) skew(1deg)}40%{-webkit-transform:rotate(25deg) scale(1) skew(1deg)}50%{-webkit-transform:rotate(0) scale(1) skew(1deg)}100%{-webkit-transform:rotate(0) scale(1) skew(1deg)}}@media (max-width:768px){
+.hotline-bar{display:none}}
+
+.hotline-phone-ring-img-circle .pps-btn-img img {
+    width: 20px;
+    height: 20px;
+}
+img {
+    border: none;
+}
+.hotline-phone-ring-wrap {
+    position: fixed !important;
+    bottom: 0;
+    right: 15%;
+    z-index: 1111111;
+}
+.hotline-phone-ring {
+    position: relative;
+    visibility: visible;
+    background-color: transparent;
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+    z-index: 11;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transition: visibility .5s;
+    left: 0;
+    bottom: 0;
+    display: block;
+}
+.float-icon-hotline {
+    display: block;
+    width: 40px;
+    position: fixed;
+    bottom: 85px;
+    left: 33px;
+    z-index: 999999;
+}
+.float-icon-hotline ul {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.float-icon-hotline ul li {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.float-icon-hotline ul li a#messengerButton {
+    padding: 0px !important;
+    background: transparent !important;
+    border: 0px !important;
+}
+@media only screen and (min-width: 960px)
+{
+	.float-icon-hotline ul li .fa {
+		background-size: contain !important;
+	}
+}
+.float-icon-hotline ul li .fa-phone {
+    background-color: #ed1c24;
+}
+.float-icon-hotline ul li .fa {
+    background-color: #ed1c24;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #fff;
+}
+.animated.infinite {
+    animation-iteration-count: infinite;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.tada {
+    animation-name: tada;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.float-icon-hotline ul li span {
+    display: inline-block;
+    padding: 0;
+    background-color: #ff6a00;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 0;
+    width: 0;
+    overflow: hidden;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    background-color: #ff6a00;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+ul.left-icon.hotline {
+    margin-left: 0px !important;
+}
+.float-icon-hotline ul li .fa-zalo {
+    background: url(https://netweb.vn/img/hotline/zalo.png) center center no-repeat;
+}
+.float-icon-hotline ul li .fa-zalo:hover {
+    background: #ef0303 url(https://netweb.vn/img/hotline/zalo.png) center center no-repeat;opacity:.5;
+}
+.float-icon-hotline ul li .fa-messenger {
+    background:  url(https://netweb.vn/img/hotline/fb.png) center center no-repeat;
+}
+.float-icon-hotline ul li .fa-messenger:hover {
+    background: #168efb url(https://netweb.vn/img/hotline/fb.png) center center no-repeat;opacity:.5;
+}              
+  body {
+    background-color: #2b303b;
+    color: #63717f;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  p {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .slogan {
+    background-color: #2b303b;
+    padding: 20px;
+    text-align: center;
+  }
+.image-align-left {
+    float: left;
+    margin-right: 10px;
+    background-color:black;
+  }
+  .image-align-right {
+    float: right;
+    margin-right: 10px;
+    background-color:black;
+  }
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #706d6d;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: yellow;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(138, 159, 168);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(116, 115, 115, 0.2);
+  z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a:hover { color:white; 
+font-weight: bold; font-size:120%;
+}
+footer {
+background-color: rgb(163, 161, 161); 
+  margin:1px
+  padding 10px 
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1;
+  max-width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.block_2 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.link {
+  color: rgb(24, 24, 24);
+  text-align:left;
+}
+.banner {
+    background: url(https://dntt.mediacdn.vn/zoom/700_438/197608888129458176/2025/4/8/lh2-1-174408348663019720265-0-47-412-706-crop-1744083640481476483224.jpg) no-repeat center center;
+    background-size: 90%;
+    padding-top: 12rem;
+    padding-bottom: 10rem;
+    text-align: center !important;
+    color: rgb(235, 182, 7) !important; 
+}
+    </style>
+</head>
+<body>
+  <div class="banner">
+    <h1></h1>
+</div>
+  <div class="hotline-phone-ring-wrap">
+        <div class="hotline-phone-ring">
+            <div class="hotline-phone-ring-circle"></div>
+            <div class="hotline-phone-ring-circle-fill"></div>
+            <div class="hotline-phone-ring-img-circle"> <a href="tel:0333699436" class="pps-btn-img" > <img src="https://netweb.vn/img/hotline/icon.png" alt="so dien thoai" width="50"> </a></div>
+        </div>
+        <div class="hotline-bar">
+            <a href="tel:0333699436" style="text-decoration: none";> <span class="text-hotline">0333699436</span> </a>
+        </div>
+    
+    </div>
+    <div class="navbar">
+    <a href="Chính.html">Trang chủ</a>
+    <div class="dropdown">
+      <button class="dropbtn" >Địa điểm
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="https://vinpearl.com/vi/lang-chu-tich-ho-chi-minh">Địa điểm 1</a>
+        <a href="https://majestic-churros-d662a2.netlify.app/">Địa điểm 2 </a>
+        <a href="#">Địa điểm 3</a>
+        <a href="#">Địa điểm 4</a>
+        <a href="#">Địa điểm 5</a>
+        <a href="#">Địa điểm 6</a>
+        <a href="#">Địa điểm 7</a>
+        <a href="#">Địa điểm 8</a>
+        <a href="#">Địa điểm 9</a>
+        <a href="#">Địa điểm 10</a>
+      </div>
+    </div>
+  </div>
+    <h1 style="color: #FFD700; text-align: center; font-size: 2.5rem; margin-top: 20px;">ĐỀN VĂN HIẾN (ĐAN PHƯỢNG)</h1>
+    <div style="text-align: center; margin: 20px 0;">
+        <video src="vd1.mp4" type="video/mp4" controls autoplay style="width: 60%; height: auto; border: 2px solid #FFD700; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></video>
+    </div>
+    <hr style="border: 1px solid #FFD700; margin: 20px 0;">
+    <div style="margin: 20px 0; text-align: justify; color: white; line-height: 1.8;"></div>
+        <img class="image-align-right" src="https://vietsensetravel.com/view/at_ve-den-van-hien-tim-hieu-lich-su-danh-nhan-to-hien-thanh_76d81d1e0de37a873894dc7a6e21024e.jpeg" alt="Đền Văn Hiến" style="width:35%; height:auto; margin: 10px;">
+        <h3 style="color: white;"><b>Đền Văn Hiến, tên chữ là Văn Hiến Đường thuộc làng Hạ Mỗ, xã Hạ Mỗ, huyện Đan Phượng, thành phố Hà Nội. Xưa kia Đền Văn Hiến là văn chỉ thờ Khổng Tử và là nơi biểu dương các danh nhân khoa bảng trong làng. Sau khi Thái úy Tô Hiến Thành, người con ưu tú của quê hương qua đời, nhân dân xây mộ và thờ ông tại đây. Tháng 11/1991, Bộ Văn hóa-Thông tin thể thao và du lịch đã xếp hạng đền Văn Hiến là di tích lịch sử và kiến trúc nghệ thuật.</b></h3>
+        <img class="image-align-left" src="https://hoangthanhthanglong.vn/wp-content/uploads/2013/11/tohienthanh.jpg" alt="Đền Văn Hiến" style="width:27%; height:auto; margin: 10px;">
+        <h4 style="color: white;">Đền là nơi thờ chính hai vị đại hiền của làng Hạ Mỗ là Thái úy Tô Hiến Thành và quan nghề Đỗ Trí Trung. Năm Duy Tân thứ 2 (Mậu Thân – 1908), sau lễ Đồng Giáng bút tại chùa Hải Giác (Đinh Mùi – 1907), các nho sĩ và nhân dân Hạ Mỗ tiến hành sửa sang, quy hoạch lại di tích thành đền Văn Hiến như ngày nay.</h4>
+        <p>Đền Văn Hiến tọa lạc trên khu đất cao đầu làng, nằm bên hữu ngạn sông Nhuệ cổ. Các kiến trúc chính của đền được xây dựng theo hướng Đông. Sau lần tôn tạo năm 2005, quy hoạch mặt bằng nhà đền và nhà mẫu chuyển sang phía trái. Khu “Tô Vương lăng Thái sư mộ” nhìn thẳng nhà bia “Văn Hiến Đường bi ký” bên hồ bán nguyệt. Gian giữa nhà tiền tế chiếu trực diện tượng danh nhân Tô Hiến Thành nằm ở trung tâm khuôn viên đền Văn Hiến.</p>
+        <p>Từ đường cái làng bước vào đền qua cổng lớn có bức đại tự “Thánh vực hiền quan” (của người hiền, cõi thần thánh) cùng đôi câu đối:</p>
+        <blockquote style="text-align: center; font-style: italic; color: white;">
+            “Nhuệ thủy giang biên, Văn Hiến thiện đường kim thành vực.<br>
+            Ô Diên thành ngoại, Kim Sơn linh tích cổ hiền quan.”
+        </blockquote>
+        <p>Khuôn viên đền Văn Hiến nay được mở rộng, phía trước sân lớn là hồ Bán Nguyệt. Bao quanh tượng danh nhân Tô Hiến Thành là vườn hoa, cây cối xanh tốt.</p>
+        <img class="image-align-right" src="https://vietsensetravel.com/view/at_ve-den-van-hien-tim-hieu-lich-su-danh-nhan-to-hien-thanh_cc14228173ff447dc87688c72410508d.png" alt="Đền Văn Hiến" style="width:26%; height:auto; margin: 10px;">
+        <p>Văn Hiến Đường bao gồm tiền tế, bái đường và hậu cung. Nhà tiền tế cao hơn mặt sân 0,50m. Gồm 5 gian xây gạch bít dốc, phía trước có hàng hiên tương xứng với 5 khoảng hoành. Các vi mái bào trơn đóng bén, diềm mái chạm hổ phù, hoa giây.</p>
+        <p>Phần chính của đền hình chữ đinh (chuôi vồ) gồm đại bái và hậu cung. Tất cả đều xây gạch bao quanh tạo không gian khép kín. Đại bái xây bít đốc, lợp ngói cổ mũi hài, phần đỡ gỗ mái kiểu thượng chồng giường hạ kẻ. Mặt trước thông ra tiền tế gian bên xây tường hậu, sát tường là bệ gạch bày long ngai, hương án, bia đá thờ Táo quân bên phải và các vị hậu hiền thờ bên trái.</p>
+        <p>Hậu cung gồm ba gian dọc nối với gian giữa nhà đại bái, kiến trúc cao hai tầng tám mái, kiểu Phương Đình. Hai góc đao cong lên tạo cảm giác mềm mại, bay bổng, cao thoáng tôn vẻ trang nghiêm của cung cấm.</p>
+        <p>Những năm 40 của thế kỷ XIX, do nhu cầu thờ tự, một nhà sư người trong làng đã xin lập nhà Mẫu để vừa hương khói trên đền vừa để thực hiện phật sự nên Hội đền Văn Hiến cho lập thêm ngôi nhà mẫu bên cạnh. Ban đầu còn nhỏ, nay được xây dựng lớn hơn, đứng song song ở bên trái khu đền.</p>
+        <div style="text-align: center;">
+            <img class="image-align-center" src="https://mayviendong.vn/wp-content/uploads/2019/02/%C4%91%E1%BB%81n-th%E1%BB%9D-t%C3%B4-hi%E1%BA%BFn-th%C3%A0nh.jpg" alt="Đền Văn Hiến" style="width:27%; height:auto; margin: 10px;">
+        </div>
+        <p>Ở chính giữa Văn Hiến Đường là tượng đồng Tô Hiến Thành được đúc và đặt trên bệ cao. Tượng đứng sừng sững giữa đất trời với một phong thái uy nghi, dáng vẻ anh hùng cho thấy tầm vóc lớn lao của Thái úy Tô Hiến Thành.</p>
+        <p>Đặc biệt, tại đền Văn Hiến còn lưu giữ được bộ Bia Khoa Tràng (bia ghi tên các vị đỗ đạt trong các khoa thi thủa trước) và bộ mộc bản in sách “Cổ Kim Truyền lục”. Đền còn bảo lưu được trọn vẹn các bản khắc gỗ in bộ thơ văn “Cổ Kim Truyền lục”. Có trên 500 bài chia làm 4 tập Nguyên – Hanh – Lợi – Trinh do các nho sĩ trong làng sáng tác và xuất bản vào đầu thế kỷ 20. Đây là hai tư liệu quý minh chứng cho truyền thống văn hiến của mảnh đất Ô Diên xưa, Hạ Mỗ ngày nay.</p>
+        <p>Với tấm lòng biết ơn sâu sắc về những đóng góp, công lao to lớn của Thái úy Tô Hiến Thành, ngày nay, người dân Hạ Mỗ vẫn ra sức bảo vệ, tôn tạo di tích với tấm lòng thành kính với bậc tiên hiền nhất. Mặt khác, người dân Hạ Mỗ còn luôn lưu giữ những nét văn hóa và truyền lại cho con cháu đời sau hiểu rõ hơn về công lao của Thái úy Tô Hiến Thành để con cháu đời sau mãi khắc ghi và tưởng nhớ công lao của ông đúng với câu tục ngữ: “Uống nước nhớ nguồn”.</p>
+    </div>
+    <footer>
+      <div class="row">
+      <div style="width:60%">
+          <p style="color: #333;"><b> Thành viên Tổ 1: </b></p>
+      <ul>
+              <li>  Facebook: 
+                <div><a href="https://www.facebook.com/share/15LNeVZdwZ/" style="text-decoration: none;" class="link"> Đông Suy </a>
+                  <a href="https://www.facebook.com/share/16JWoKuj15/" style="text-decoration: none;" class="link">, Nguyễn Trường </a></div>
+                <div><a href="https://www.facebook.com/share/1HNmxGeAK5/" style="text-decoration: none;" class="link"> Tuấn Hòa </a>
+                  <a href="https://www.facebook.com/share/15mhJufUUU/" style="text-decoration: none;" class="link">, Hoàng Mai </a></div>
+                <div><a href="https://www.facebook.com/share/15LNeVZdwZ/" style="text-decoration: none;" class="link"> Đăng An </a>
+                  <a href="https://www.facebook.com/share/16PQsvWmjY/" style="text-decoration: none;" class="link">, Minh Nguyệt </a></div>
+                <div><a href="https://www.facebook.com/share/1AGh98L1wz/" style="text-decoration: none;" class="link"> Nguyễn Huyền </a>
+                  <a href="https://www.facebook.com/share/1AHvhPtnBN/" style="text-decoration: none;" class="link">, Minh Khôi </a> </div>
+                <div><a href="https://www.facebook.com/quangvuu07?mibextid=ZbWKwL" style="text-decoration: none;" class="link"> Quang Vũ</a>
+                  <a href="https://www.facebook.com/share/16Pj5QDesf/" style="text-decoration: none;" class="link">, Hữu Nam </a>   </div> 
+                <div><a href="https://www.facebook.com/share/18urRaYw5Y/" style="text-decoration: none;" class="link"> Huy Toàn </a>
+                  <a href="https://www.facebook.com/share/1FpjQrApoL/" style="text-decoration: none;" class="link">, Quang Anh </a></div> 
+              </li>
+            </ul>
+            <ul></ul>
+      </div>
+          <div style="width:30%">
+              <p>Thành viên Tổ 1 (part 2): </p>
+      <ul>
+              <li>  Tóp Tóp </li>
+      </ul>
+      </div>
+      </div>
+      </footer>
+
+
+  </body>
+</html>
